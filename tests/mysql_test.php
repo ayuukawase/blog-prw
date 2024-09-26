@@ -10,22 +10,19 @@
     buscar_teste();
 
     //teste da inserção no banco de dados
-    function insert_teste($nome, $email, $senha) : void
-    {
+    function insert_teste($nome, $email, $senha) : void {
         $dados = ['nome' => $nome, 'email' => $email, 'senha' => $senha];
         insere('usuario', $dados);
     }
 
     //teste do select no banco de dados
-    function buscar_teste() : void 
-    {
+    function buscar_teste() : void {
         $usuarios = buscar('usuario', ['id', 'nome', 'email'], [],'');
         print_r($usuarios);
     }
 
     //teste do update no banco de dados
-    function update_teste($id, $nome, $email) : void 
-    {
+    function update_teste($id, $nome, $email) : void {
         $dados = ['nome' => $nome, 'email' => $email];
         $criterio = [['id', '=', '$id']];
         atualiza('usuario', $dados, $criterio);
