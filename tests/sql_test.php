@@ -9,6 +9,7 @@
     $dados = ['nome' => $nome,
               'email' => $email,
               'senha' => $senha];
+              
     $entidade = 'usuario';
     $criterio = [['id', '=', $id]];
     $campos = ['id', 'nome', 'email'];

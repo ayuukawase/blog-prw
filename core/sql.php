@@ -8,7 +8,7 @@
         $valores = implode(', ', array_values($dados));
 
         $instrucao .= " ({$campos}) ";
-        $instrucao .= " ({$valores}) ";
+        $instrucao .= " VALUES ({$valores}) ";
 
         return $instrucao;
     }
@@ -52,7 +52,7 @@
     //select
     function select(string $entidade, array $campos, array $criterio = [], string $ordem = null) : string {
         $instrucao = "SELECT " . implode(', ', $campos);
-        $instrucao .= "FROM {$entidade}";
+        $instrucao .= " FROM {$entidade}";
 
         if(!empty($criterio)) {
             $instrucao .= ' WHERE ';
