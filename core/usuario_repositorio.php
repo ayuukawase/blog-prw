@@ -72,6 +72,34 @@
                 }
             }
             break;
+
+        case 'logout':
+            session_destroy();
+            break;
+
+        case 'status':
+            $id = (int)$id;
+            $valor = (int)$valor;
+
+            $dados = [
+                'ativo' => $valor
+            ];
+
+            $criterio = [
+                ['id', '=', $id]
+            ];
+
+            atualiza (
+                'usuario',
+                $dados,
+                $criterio
+            );
+
+            header('Location: ../usuarios.php');
+            exit;
+            break;
     }
+    
+    header('Location: ../index.php');
 
 ?>
