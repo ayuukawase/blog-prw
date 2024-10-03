@@ -17,7 +17,7 @@
 
     $id = (int)$id;
 
-    switch($caso) {
+    switch($acao) {
         case 'insert':
             $dados = [
                 'titulo'            => $titulo,
