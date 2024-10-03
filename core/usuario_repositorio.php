@@ -15,12 +15,13 @@
         $$indice = limparDados($dado);
     }
 
+//verificar no banco de dados se funcionou
     switch($acao) {
         case 'insert':
             $dados = [
-                'nome' => $nome,
+                'nome'  => $nome,
                 'email' => $email,
-                'senha' => crypt($senha,$salt)
+                'senha' => crypt($senha, $salt)
             ];
 
             insere(
@@ -29,16 +30,16 @@
             );
 
             break;
-
+    
         case 'update':
             $id = (int)$id;
             $dados = [
-                'nome' => $nome,
+                'nome'  => $nome,
                 'email' => $email
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['id', '-', $id]
             ];
 
             atualiza(
@@ -54,25 +55,25 @@
                 ['email', '=', $email],
                 ['AND', 'ativo', '=', 1]
             ];
-
             $retorno = buscar(
                 'usuario',
                 ['id', 'nome', 'email', 'senha', 'adm'],
                 $criterio
             );
 
-            if(count($retorno) > 0) {
-                if(crypt($senha,$salt) == $retorno[0]['senha']) {
+            if(count($retorno)> 0){
+                if(crypt($senha,$salt) == $retorno[0]['senha']){
                     $_SESSION['login']['usuario'] = $retorno[0];
-                    if(!empty($_SESSION['url_retorno'])) {
-                        header('Location: ' . $_SESSION['url_retorno']);
+                    if(!empty($_SESSION['url_retorno'])){
+                        header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
                         exit;
                     }
                 }
             }
-            break;
 
+            break;
+    
         case 'logout':
             session_destroy();
             break;
@@ -89,7 +90,7 @@
                 ['id', '=', $id]
             ];
 
-            atualiza (
+            atualiza(
                 'usuario',
                 $dados,
                 $criterio
@@ -111,17 +112,16 @@
                 ['id', '=', $id]
             ];
 
-            atualiza (
+            atualiza(
                 'usuario',
                 $dados,
                 $criterio
             );
 
-            header('Location: ../usuarios.php');
+            header('Location: ../usuario.php');
             exit;
             break;
     }
-
     header('Location: ../index.php');
 
 ?>
