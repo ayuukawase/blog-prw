@@ -1,4 +1,4 @@
-<!DOCETYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Post | Projeto para Web com PHP</title>
@@ -17,7 +17,7 @@
                 <div class="col-md-12">
                     <?php include 'includes/menu.php'; ?>
                 </div>
-                <div class="com-md-10">
+                <div class="col-md-10" style="padding-top: 50px;">
                     <h2>Pagina teste includes</h2>
                 </div>
             </div>

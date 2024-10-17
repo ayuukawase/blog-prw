@@ -63,7 +63,7 @@
         }
 
         if(!empty($ordem)) {
-            $instrucao .= " ORDEM BY $ordem ";
+            $instrucao .= " ORDER BY $ordem ";
         }
 
         return $instrucao;
