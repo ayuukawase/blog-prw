@@ -1,3 +1,9 @@
+drop database if exists blog;
+
+create database if not exists blog;
+
+use blog;
+
 create table usuario (
     id                  int not null auto_increment,
     nome                varchar(50) not null,
