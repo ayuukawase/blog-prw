@@ -42,8 +42,8 @@
                     ?>
                 </div>
             </div>
-            <div class="row" style="min=height: 500px;">
-                <div class="col=-md-12">
+            <div class="row" style="min-height: 500px;">
+                <div class="col-md-12">
                     <?php
                         include 'includes/menu.php';
                     ?>
