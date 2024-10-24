@@ -13,7 +13,7 @@
                 <?php include 'includes/topo.php'; ?>
             </div>
         </div>
-        <div class="row" style="min=height: 500px;">
+        <div class="row" style="min-height: 500px;">
             <div class="col-md-12">
                 <?php include 'includes/menu.php'; ?>
             </div>
@@ -46,8 +46,7 @@
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input class="form-control" type="text" require="required" id="nome" name="nome" value="<?php echo $entidade['nome'] ?? ?>">
-                    </div>
+                        <input class="form-control" type="text" require="required" id="nome" name="nome" value="<?php echo $entidade['nome'] ?? '' ?>">                    </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input class="form-control" type="text" require="required" id="email" name="email" value="<?php echo $entidade['email'] ?? '' ?>">
